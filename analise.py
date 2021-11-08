@@ -10,7 +10,7 @@ fs = s3fs.S3FileSystem(anon=False)
 
 # Retrieve file contents.
 # Uses st.cache to only rerun when the query changes or after 10 min.
-@st.cache(ttl=600000)
+
 
 bucket = "teste-streamlit"
 key = "analise_s3.csv"
