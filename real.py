@@ -12,7 +12,7 @@ kpi1, kpi2 = st.beta_columns(2)
 
 
 if (id!=0 and key!=0):
-    kinesis_client = boto3.client('kinesis', aws_access_key_id=id, aws_secret_access_key=key, region='us-east-1')
+    kinesis_client = boto3.client('kinesis', aws_access_key_id=id, aws_secret_access_key=key, 'us-east-1')
     my_stream_name = 'ExampleInputStream'
 
     response = kinesis_client.describe_stream(StreamName=my_stream_name)
