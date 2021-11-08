@@ -9,7 +9,15 @@ key = st.text_input("AWS_SECRET_ACCESS_KEY", 0)
 
 kpi1, kpi2 = st.beta_columns(2) 
 
+with kpi1:
+    st.markdown('**X**')
+    #number1 = 0
+    st.markdown(f"<h1 style='text-align: center; color: red;'>{x}</h1>", unsafe_allow_html=True)
 
+with kpi2:
+    st.markdown('**Y**')
+    #number2 = 0
+    st.markdown(f"<h1 style='text-align: center; color: red;'>{y}</h1>", unsafe_allow_html=True)
 
 if (id!=0 and key!=0):
     kinesis_client = boto3.client('kinesis', aws_access_key_id=id, aws_secret_access_key=key, region_name='us-east-1')
@@ -34,19 +42,12 @@ if (id!=0 and key!=0):
             mydata = ast.literal_eval(dict_str)
             x = mydata.get('x')
             y = mydata.get('y')
-            with kpi1:
-                st.markdown('**X**')
-                number1 = x
-                st.markdown(f"<h1 style='text-align: center; color: red;'>{x}</h1>", unsafe_allow_html=True)
-
-            with kpi2:
-                st.markdown('**Y**')
-                number2 = y
-                st.markdown(f"<h1 style='text-align: center; color: red;'>{y}</h1>", unsafe_allow_html=True)
+            number1 = x
+            number2 = y
 
 
     
-        time.sleep(1)
+        time.sleep(20)
 
  
 
