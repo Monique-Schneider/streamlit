@@ -9,9 +9,10 @@ key = st.text_input("AWS_SECRET_ACCESS_KEY", 0)
 
 kpi1, kpi2 = st.beta_columns(2) 
 
-kinesis_client = boto3.client('kinesis', aws_access_key_id=id, aws_secret_access_key=key)
+
 
 if (id!=0 & key!=0):
+    kinesis_client = boto3.client('kinesis', aws_access_key_id=id, aws_secret_access_key=key)
     my_stream_name = 'ExampleInputStream'
 
     response = kinesis_client.describe_stream(StreamName=my_stream_name)
