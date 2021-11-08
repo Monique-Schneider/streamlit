@@ -11,7 +11,7 @@ kpi1, kpi2 = st.beta_columns(2)
 
 
 
-if (id!=0 & key!=0):
+if (id!=0 and key!=0):
     kinesis_client = boto3.client('kinesis', aws_access_key_id=id, aws_secret_access_key=key)
     my_stream_name = 'ExampleInputStream'
 
